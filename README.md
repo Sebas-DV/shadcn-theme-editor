@@ -13,6 +13,14 @@ An in-app, Shadow-DOM **overlay** to edit your [shadcn/ui](https://ui.shadcn.com
 
 Framework-agnostic by design: one Vite plugin covers **Vite (React/Vue/Svelte)**, **Laravel + Inertia**, **TanStack Start**, **Astro**, **Remix**, and **SvelteKit**; a `<ThemeEditor/>` drop-in React component plus companion CLI cover **Next.js (App & Pages Router)**.
 
+<p align="center">
+  <img src="docs/demo.gif" alt="Dragging OKLCH sliders recolors the running app in real time, then Apply writes the change straight into globals.css" width="880" />
+</p>
+
+<p align="center">
+  <em>Drag the OKLCH sliders → your real app recolors live → <strong>Apply</strong> writes straight into your <code>globals.css</code>.<br />No copy-paste, no web export — your actual file, updated in place.</em>
+</p>
+
 ---
 
 > [!CAUTION]
