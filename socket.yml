@@ -16,3 +16,8 @@ issueRules:
 
   # Low-confidence generative flag with no concrete finding.
   aiDetectedAnomaly: false
+
+  # core reads the project's theme CSS via fs/promises (detectCssFiles). Reading
+  # and rewriting your stylesheet is the tool's core function, and access stays
+  # inside the project root. Expected, not a risk.
+  filesystemAccess: false
