@@ -6,3 +6,7 @@ allowBuilds:
   esbuild: true
 minimumReleaseAgeExclude:
   - "@types/node@26.5.0"
+# Force a patched esbuild (>=0.28.1) across tsup/vite to clear the LOW-severity
+# Windows dev-server path-traversal advisory (GHSA-g7r4-m6w7-qqqr).
+overrides:
+  esbuild: ">=0.28.1"
