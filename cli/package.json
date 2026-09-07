@@ -1,0 +1,29 @@
+{
+  "name": "@sebas-dv/shadcn-theme-editor",
+  "version": "0.1.0",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Run the shadcn Theme Editor companion server for any dev setup (Next.js, or as a standalone). Serves the live overlay and writes theme changes to your CSS.",
+  "type": "module",
+  "bin": {
+    "shadcn-theme-editor": "./dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@sebas-dv/shadcn-theme-editor-overlay": "workspace:*",
+    "@sebas-dv/shadcn-theme-editor-server": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^26.5.0"
+  }
+}

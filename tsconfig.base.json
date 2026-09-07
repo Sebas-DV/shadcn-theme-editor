@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "baseUrl": ".",
+    "paths": {
+      "@sebas-dv/shadcn-theme-editor-core": ["packages/core/src/index.ts"],
+      "@sebas-dv/shadcn-theme-editor-core/browser": ["packages/core/src/browser.ts"],
+      "@sebas-dv/shadcn-theme-editor-server": ["packages/server/src/index.ts"],
+      "@sebas-dv/shadcn-theme-editor-overlay": ["packages/overlay/src/index.ts"],
+      "@sebas-dv/shadcn-theme-editor-overlay/global": ["packages/overlay/src/auto.ts"],
+      "@sebas-dv/shadcn-theme-editor-vite": ["packages/vite-plugin/src/index.ts"],
+      "@sebas-dv/shadcn-theme-editor-react": ["packages/react/src/index.ts"]
+    }
+  }
+}

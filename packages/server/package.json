@@ -1,0 +1,38 @@
+{
+  "name": "@sebas-dv/shadcn-theme-editor-server",
+  "version": "0.1.0",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Companion dev server: scan/apply HTTP API that reads and rewrites the shadcn theme CSS. Usable standalone (CLI) or as Vite middleware.",
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@hono/node-server": "^2.1.1",
+    "@sebas-dv/shadcn-theme-editor-core": "workspace:*",
+    "hono": "^4.13.7"
+  },
+  "devDependencies": {
+    "@types/node": "^26.5.0"
+  }
+}

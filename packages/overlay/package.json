@@ -1,0 +1,34 @@
+{
+  "name": "@sebas-dv/shadcn-theme-editor-overlay",
+  "version": "0.1.0",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Framework-agnostic, Shadow-DOM overlay UI for editing shadcn theme tokens live. Talks to the companion server's scan/apply API.",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./global": "./dist/theme-editor.global.js",
+    "./style": "./dist/index.css"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@sebas-dv/shadcn-theme-editor-core": "workspace:*"
+  }
+}
