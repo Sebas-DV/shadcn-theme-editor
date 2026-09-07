@@ -15,7 +15,9 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
+  # Opt JS actions (checkout/setup-node/pnpm) into the Node 24 runtime ahead of
+  # GitHub forcing it in mid-2026, silencing the Node 20 deprecation warning.
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   validate:
@@ -25,7 +27,9 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest]
-        node-version: [18.x, 20.x, 22.x]
+        # Node 18 is EOL and can't run the vitest 5 / vite 8 toolchain
+        # (rolldown imports node:util styleText, added in Node 20.12+).
+        node-version: [20.x, 22.x, 24.x]
 
     steps:
       - name: Checkout repository
