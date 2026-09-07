@@ -1,11 +1,32 @@
 {
   "name": "@sebas-dv/shadcn-theme-editor-vite",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
   "description": "Vite plugin that mounts the shadcn theme-editor API and injects the live overlay. Covers Vite, Laravel+Inertia, TanStack Start, Astro, Remix, SvelteKit.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sebas-DV/shadcn-theme-editor.git",
+    "directory": "packages/vite-plugin"
+  },
+  "bugs": {
+    "url": "https://github.com/Sebas-DV/shadcn-theme-editor/issues"
+  },
+  "homepage": "https://github.com/Sebas-DV/shadcn-theme-editor#readme",
+  "keywords": [
+    "shadcn",
+    "shadcn-ui",
+    "vite",
+    "vite-plugin",
+    "theme-editor",
+    "tailwind-v4",
+    "oklch",
+    "laravel-inertia",
+    "astro",
+    "remix"
+  ],
   "type": "module",
   "exports": {
     ".": {

@@ -1,11 +1,29 @@
 {
   "name": "@sebas-dv/shadcn-theme-editor-server",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
   "description": "Companion dev server: scan/apply HTTP API that reads and rewrites the shadcn theme CSS. Usable standalone (CLI) or as Vite middleware.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sebas-DV/shadcn-theme-editor.git",
+    "directory": "packages/server"
+  },
+  "bugs": {
+    "url": "https://github.com/Sebas-DV/shadcn-theme-editor/issues"
+  },
+  "homepage": "https://github.com/Sebas-DV/shadcn-theme-editor#readme",
+  "keywords": [
+    "shadcn",
+    "shadcn-ui",
+    "hono",
+    "dev-server",
+    "vite-middleware",
+    "theme-editor",
+    "postcss"
+  ],
   "type": "module",
   "sideEffects": false,
   "exports": {

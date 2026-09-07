@@ -1,11 +1,30 @@
 {
   "name": "@sebas-dv/shadcn-theme-editor-react",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
   "description": "Drop-in <ThemeEditor/> React component that mounts the shadcn theme-editor overlay (for Next.js and other React apps).",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sebas-DV/shadcn-theme-editor.git",
+    "directory": "packages/react"
+  },
+  "bugs": {
+    "url": "https://github.com/Sebas-DV/shadcn-theme-editor/issues"
+  },
+  "homepage": "https://github.com/Sebas-DV/shadcn-theme-editor#readme",
+  "keywords": [
+    "shadcn",
+    "shadcn-ui",
+    "react",
+    "nextjs",
+    "theme-editor",
+    "tailwind-v4",
+    "oklch",
+    "components"
+  ],
   "type": "module",
   "exports": {
     ".": {

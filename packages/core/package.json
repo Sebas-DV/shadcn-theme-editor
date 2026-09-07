@@ -1,11 +1,31 @@
 {
   "name": "@sebas-dv/shadcn-theme-editor-core",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
   "description": "Framework-agnostic engine: parse, categorize and rewrite shadcn (Tailwind v4) theme tokens with PostCSS while preserving OKLCH formatting.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sebas-DV/shadcn-theme-editor.git",
+    "directory": "packages/core"
+  },
+  "bugs": {
+    "url": "https://github.com/Sebas-DV/shadcn-theme-editor/issues"
+  },
+  "homepage": "https://github.com/Sebas-DV/shadcn-theme-editor#readme",
+  "keywords": [
+    "shadcn",
+    "shadcn-ui",
+    "oklch",
+    "color",
+    "contrast",
+    "wcag",
+    "postcss",
+    "theme",
+    "tailwind"
+  ],
   "type": "module",
   "sideEffects": false,
   "exports": {

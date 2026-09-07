@@ -1,11 +1,31 @@
 {
   "name": "@sebas-dv/shadcn-theme-editor",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
   "description": "Run the shadcn Theme Editor companion server for any dev setup (Next.js, or as a standalone). Serves the live overlay and writes theme changes to your CSS.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sebas-DV/shadcn-theme-editor.git",
+    "directory": "cli"
+  },
+  "bugs": {
+    "url": "https://github.com/Sebas-DV/shadcn-theme-editor/issues"
+  },
+  "homepage": "https://github.com/Sebas-DV/shadcn-theme-editor#readme",
+  "keywords": [
+    "shadcn",
+    "shadcn-ui",
+    "tailwindcss",
+    "tailwind-v4",
+    "theme",
+    "oklch",
+    "theme-editor",
+    "css-variables",
+    "live-preview"
+  ],
   "type": "module",
   "bin": {
     "shadcn-theme-editor": "./dist/cli.js"
