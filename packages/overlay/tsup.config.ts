@@ -19,7 +19,7 @@ export default defineConfig([
     globalName: "ShadcnThemeEditor",
     dts: false,
     sourcemap: true,
-    minify: true,
+    minify: false, // keep readable so scanners don't flag it as "obfuscated"
     target: "es2018",
     platform: "browser",
     noExternal,

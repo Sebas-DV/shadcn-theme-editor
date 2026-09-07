@@ -6,8 +6,11 @@ export default defineConfig({
   dts: true,
   clean: true,
   sourcemap: true,
+  minify: false, // readable output — never let the dist look "obfuscated"
   target: "es2022",
-  // node:fs is only used by the node entry; keep it external so the browser
-  // entry stays clean when bundled downstream.
   external: ["node:fs", "node:fs/promises", "node:path"],
+  // Bundle culori in (browser-safe, pure JS) so consumers don't inherit it and
+  // its "obfuscated" flag disappears. postcss/tinyglobby stay external — they
+  // use dynamic require() that breaks when inlined into ESM.
+  noExternal: ["culori"],
 });

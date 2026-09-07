@@ -1,0 +1,18 @@
+# Socket.dev configuration — https://docs.socket.dev/docs/socket-yml
+version: 2
+
+# Rationale for each accepted alert lives inline. The "obfuscated" alert is left
+# enabled: the flagged culori code is now bundled into core's own dist, so it no
+# longer reaches consumers as a declared dependency.
+issueRules:
+  # The companion is a dev-only HTTP server (Hono / node:http); network access is
+  # its purpose. It refuses to run under NODE_ENV=production and binds to
+  # localhost, so this is expected, not a supply-chain risk.
+  networkAccess: false
+
+  # source-map-js (a transitive dependency of postcss) uses Function() in a sort
+  # routine. postcss is a foundational, widely-trusted CSS toolchain dependency.
+  usesEval: false
+
+  # Low-confidence generative flag with no concrete finding.
+  aiDetectedAnomaly: false
