@@ -11,6 +11,8 @@ export default tseslint.config(
       "**/*.d.ts",
       "playground/**",
       "coverage/**",
+      ".agents/**",
+      ".claude/**",
     ],
   },
   js.configs.recommended,

@@ -84,4 +84,34 @@ describe("shadcnThemeEditor Vite plugin", () => {
     expect(tags[0].tag).toBe("script");
     expect(tags[0].attrs.src).toContain("/custom-base/overlay.js");
   });
+
+  it("resolves @sebas-dv/shadcn-theme-editor-overlay ID", () => {
+    const plugin = shadcnThemeEditor();
+    const resolveId = plugin.resolveId as (id: string) => string | undefined;
+    const resolved = resolveId("@sebas-dv/shadcn-theme-editor-overlay");
+    expect(resolved).toBeDefined();
+    expect(resolved).toContain("index.js");
+  });
+
+  it("filters out fake wildcard vite.* subdomains in favor of real domains", () => {
+    process.env.NODE_ENV = "development";
+    const plugin = shadcnThemeEditor();
+
+    const configResolved = plugin.configResolved as (config: any) => void;
+    configResolved({ command: "serve", mode: "development" });
+
+    const configureServer = plugin.configureServer as (server: any) => void;
+    configureServer({
+      config: { mode: "development", root: process.cwd() },
+      resolvedUrls: {
+        local: ["https://vite.kuma.test:5173", "https://kuma.test:5173"],
+      },
+      middlewares: { use: () => {} },
+    });
+
+    const transformIndexHtml = plugin.transformIndexHtml as any;
+    const tags = transformIndexHtml();
+    expect(tags[0].attrs.src).toContain("https://kuma.test:5173");
+    expect(tags[0].attrs.src).not.toContain("vite.kuma.test");
+  });
 });

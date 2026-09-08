@@ -52,7 +52,7 @@ export const OVERLAY_CSS = `
   box-shadow: var(--te-shadow); overflow: hidden;
 }
 
-.te-header { display: flex; align-items: center; gap: 10px; padding: 12px 12px 12px 14px; }
+.te-header { display: flex; align-items: center; gap: 10px; padding: 12px 12px 12px 14px; flex-shrink: 0; }
 .te-brand { display: flex; align-items: center; gap: 9px; min-width: 0; }
 .te-brand-mark {
   width: 22px; height: 22px; border-radius: 7px; flex: none;
@@ -70,18 +70,18 @@ export const OVERLAY_CSS = `
 .te-seg button:hover { color: var(--te-text); }
 .te-seg button.is-active { background: var(--te-elevated); color: var(--te-text); box-shadow: 0 1px 2px rgba(0,0,0,.3); }
 
-.te-icon { width: 28px; height: 28px; display: inline-grid; place-items: center; border: 0; background: transparent; color: var(--te-muted); cursor: pointer; border-radius: 8px; font-size: 15px; transition: background .12s, color .12s; }
+.te-icon { width: 28px; height: 28px; display: inline-grid; place-items: center; border: 0; background: transparent; color: var(--te-muted); cursor: pointer; border-radius: 8px; font-size: 15px; transition: background .12s, color .12s; flex-shrink: 0; }
 .te-icon:hover { background: var(--te-surface-2); color: var(--te-text); }
 
-.te-toolbar { display: flex; align-items: center; gap: 8px; padding: 0 12px 10px; }
+.te-toolbar { display: flex; align-items: center; gap: 8px; padding: 0 12px 10px; flex-shrink: 0; }
 .te-search { flex: 1; min-width: 0; background: var(--te-surface); border: 1px solid var(--te-line); border-radius: 9px; color: var(--te-text); padding: 7px 10px; font-size: 12px; font-family: var(--te-sans); }
 .te-search::placeholder { color: var(--te-faint); }
 .te-search:focus { outline: none; border-color: var(--te-line-strong); }
 .te-file { font-family: var(--te-mono); font-size: 10.5px; color: var(--te-faint); max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: none; }
 
-.te-tabs { display: flex; gap: 2px; padding: 0 8px; border-bottom: 1px solid var(--te-line); overflow-x: auto; scrollbar-width: none; }
+.te-tabs { display: flex; gap: 2px; padding: 0 8px; border-bottom: 1px solid var(--te-line); overflow-x: auto; scrollbar-width: none; flex-shrink: 0; min-height: 40px; position: relative; z-index: 1; }
 .te-tabs::-webkit-scrollbar { display: none; }
-.te-tab { position: relative; border: 0; background: transparent; color: var(--te-muted); padding: 9px 10px 11px; cursor: pointer; font-size: 12px; font-weight: 550; white-space: nowrap; font-family: var(--te-sans); transition: color .12s; }
+.te-tab { position: relative; border: 0; background: transparent; color: var(--te-muted); padding: 9px 10px 11px; cursor: pointer; font-size: 12px; font-weight: 550; white-space: nowrap; font-family: var(--te-sans); transition: color .12s; flex-shrink: 0; }
 .te-tab:hover { color: var(--te-text); }
 .te-tab.is-active { color: var(--te-text); }
 .te-tab.is-active::after { content: ""; position: absolute; left: 8px; right: 8px; bottom: -1px; height: 2px; background: var(--te-accent); border-radius: 2px 2px 0 0; }
@@ -89,7 +89,7 @@ export const OVERLAY_CSS = `
 .te-tab.is-active .te-tab-count { color: var(--te-accent); }
 
 /* ---------------------------------------------------------------------- list */
-.te-list { overflow-y: auto; padding: 6px; flex: 1; scrollbar-width: thin; scrollbar-color: var(--te-line-strong) transparent; }
+.te-list { overflow-y: auto; padding: 6px; flex: 1 1 0; min-height: 0; scrollbar-width: thin; scrollbar-color: var(--te-line-strong) transparent; }
 .te-list::-webkit-scrollbar { width: 10px; }
 .te-list::-webkit-scrollbar-thumb { background: var(--te-line-strong); border-radius: 99px; border: 3px solid var(--te-ground); }
 
@@ -143,7 +143,7 @@ export const OVERLAY_CSS = `
 .te-empty strong { color: var(--te-text); display: block; margin-bottom: 4px; font-size: 13px; }
 
 /* -------------------------------------------------------------------- footer */
-.te-footer { display: flex; align-items: center; gap: 6px; padding: 10px 10px 10px 12px; border-top: 1px solid var(--te-line); background: var(--te-surface); }
+.te-footer { display: flex; align-items: center; gap: 6px; padding: 10px 10px 10px 12px; border-top: 1px solid var(--te-line); background: var(--te-surface); flex-shrink: 0; }
 .te-status { flex: 1; font-size: 11px; color: var(--te-muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .te-status.is-ok { color: var(--te-ok); }
 .te-status.is-err { color: var(--te-danger); }

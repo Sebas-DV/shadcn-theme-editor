@@ -14,6 +14,7 @@ export interface ThemeEditorPluginOptions {
   root?: string; // defaults to Vite's resolved root
   cssPath?: string;
   basePath?: string; // default /__theme-editor__
+  apiBase?: string; // custom API origin (e.g. https://kuma.test:5173 or http://localhost:5173)
   autoOpen?: boolean;
   persistState?: boolean;
   backup?: boolean;
@@ -30,6 +31,16 @@ function resolveOverlayScript(): string | undefined {
   }
 }
 
+function resolveOverlayPackage(): string | undefined {
+  try {
+    const cjs = require.resolve("@sebas-dv/shadcn-theme-editor-overlay");
+    const esm = cjs.replace(/index\.cjs$/, "index.js");
+    return esm;
+  } catch {
+    return undefined;
+  }
+}
+
 // Mounts the scan/apply API on the dev server and injects the overlay — via
 // index.html for SPAs, or the `virtual:shadcn-theme-editor` module for SSR apps.
 export function shadcnThemeEditor(options: ThemeEditorPluginOptions = {}): Plugin {
@@ -41,8 +52,14 @@ export function shadcnThemeEditor(options: ThemeEditorPluginOptions = {}): Plugi
   let server: ViteDevServer | undefined;
 
   const getApiBase = (): string => {
-    const url = server?.resolvedUrls?.local?.[0];
-    return url ? url.replace(/\/+$/, "") : "";
+    if (options.apiBase) return options.apiBase.replace(/\/+$/, "");
+    const urls = [
+      ...(server?.resolvedUrls?.local ?? []),
+      ...(server?.resolvedUrls?.network ?? []),
+    ];
+    // Avoid fake wildcard replacement hosts like vite.domain.test on Windows
+    const bestUrl = urls.find((u) => !u.includes("://vite.")) ?? urls[0];
+    return bestUrl ? bestUrl.replace(/\/+$/, "") : "";
   };
 
   return {
@@ -80,21 +97,28 @@ export function shadcnThemeEditor(options: ThemeEditorPluginOptions = {}): Plugi
 
     resolveId(id) {
       if (id === VIRTUAL_ID) return RESOLVED_VIRTUAL_ID;
+      if (id === "@sebas-dv/shadcn-theme-editor-overlay") {
+        return resolveOverlayPackage();
+      }
       return undefined;
     },
 
     load(id) {
       if (id !== RESOLVED_VIRTUAL_ID) return undefined;
       if (!isDev || process.env.NODE_ENV === "production") return "export {};"; // no-op in production builds
+      const serverBase = getApiBase();
       const opts = {
-        apiBase: getApiBase(),
         basePath,
         autoOpen: options.autoOpen ?? false,
         persistState: options.persistState ?? true,
       };
       return [
         `import { mount } from "@sebas-dv/shadcn-theme-editor-overlay";`,
-        `mount(${JSON.stringify(opts)});`,
+        `const detectedOrigin = (typeof import.meta !== "undefined" && import.meta.url && !import.meta.url.startsWith("blob:") && !import.meta.url.startsWith("data:")) ? new URL(import.meta.url).origin : "";`,
+        `const apiBase = ${options.apiBase ? JSON.stringify(options.apiBase) : `(detectedOrigin || ${JSON.stringify(serverBase)})`};`,
+        `const opts = ${JSON.stringify(opts)};`,
+        `opts.apiBase = apiBase;`,
+        `mount(opts);`,
         `export {};`,
       ].join("\n");
     },
@@ -117,3 +141,5 @@ export function shadcnThemeEditor(options: ThemeEditorPluginOptions = {}): Plugi
 }
 
 export default shadcnThemeEditor;
+export { mount } from "@sebas-dv/shadcn-theme-editor-overlay";
+export type { OverlayOptions } from "@sebas-dv/shadcn-theme-editor-overlay";

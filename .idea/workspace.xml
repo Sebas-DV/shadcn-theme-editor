@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9eddfe7f-e725-4482-85fe-3c7a9ff5d641" name="Changes" comment="" />
+    <list default="true" id="9eddfe7f-e725-4482-85fe-3c7a9ff5d641" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.prettierignore" beforeDir="false" afterPath="$PROJECT_DIR$/.prettierignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cli/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/cli/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eslint.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/eslint.config.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/core/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/core/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/overlay/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/overlay/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/overlay/src/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/overlay/src/styles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/react/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/react/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/vite-plugin/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/vite-plugin/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/vite-plugin/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/vite-plugin/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/vite-plugin/test/plugin.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/vite-plugin/test/plugin.test.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,10 +24,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6,
-  "fromUser": false
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6,
+  &quot;fromUser&quot;: false
+}</component>
   <component name="ProjectId" id="3J0Hv3n4NyAHGiLaGO29F2NzlJW" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -26,8 +40,11 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
     "javascript.preferred.runtime.type.id": "node",
     "last_opened_file_path": "C:/Users/kumad/OneDrive/Desktop/shadcn-theme-customize",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "prettierjs.PrettierConfiguration.Package": "C:\\Users\\kumad\\OneDrive\\Desktop\\shadcn-theme-customize\\node_modules\\prettier",
     "settings.editor.selected.configurable": "settings.javascript.prettier",
@@ -48,7 +65,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1788791297398</updated>
-      <workItem from="1788791297618" duration="11331000" />
+      <workItem from="1788791297618" duration="13275000" />
+      <workItem from="1788884152992" duration="1098000" />
     </task>
     <servers />
   </component>
